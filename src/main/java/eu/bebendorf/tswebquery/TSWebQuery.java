@@ -36,6 +36,12 @@ public class TSWebQuery {
         return channels;
     }
 
+    public List<Client> getClients(int id) throws TSWebQueryException {
+        List<Client> clients = new ArrayList<>();
+        request(id, "clientlist").getOrError(JsonObject.class).forEach(e -> clients.add(new Client(e)));
+        return clients;
+    }
+
     public List<ServerGroup> getServerGroups(int id) throws TSWebQueryException {
         List<ServerGroup> groups = new ArrayList<>();
         request(id, "servergrouplist").getOrError(JsonObject.class).forEach(e -> groups.add(new ServerGroup(e)));
