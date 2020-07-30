@@ -103,7 +103,7 @@ public class TSWebQuery {
     }
 
     public String addChannelGroupToken(int id, int groupId, String description) throws TSWebQueryException {
-        return request(id, "tokenadd", map("tokentype", "0", "tokenid2", String.valueOf(groupId), "tokenid1", "0", "tokendescription", description)).getOrError(JsonObject.class).get(0).get("token").getAsString();
+        return request(id, "tokenadd", map("tokentype", "1", "tokenid2", String.valueOf(groupId), "tokenid1", "0", "tokendescription", description)).getOrError(JsonObject.class).get(0).get("token").getAsString();
     }
 
     public TSWebQueryResponse request(int id, String command){
