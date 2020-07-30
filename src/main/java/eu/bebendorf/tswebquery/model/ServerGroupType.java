@@ -1,8 +1,8 @@
 package eu.bebendorf.tswebquery.model;
 
 public enum  ServerGroupType {
-    REGULAR(0),
-    TEMPLATE(1),
+    TEMPLATE(0),
+    REGULAR(1),
     QUERY(2);
     int type;
     ServerGroupType(int type){
